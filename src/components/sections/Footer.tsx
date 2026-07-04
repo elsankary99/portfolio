@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-foreground/30 text-center">
-            &copy; {new Date().getFullYear()} Ahmed Ibrahim. Built with Next.js, Tailwind CSS & Framer Motion.
+            Designed &amp; Built by Ahmed Ibrahim
           </p>
 
           <button

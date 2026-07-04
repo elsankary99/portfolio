@@ -2,17 +2,39 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Download, Send, Check, Phone } from "lucide-react";
+import { Mail, Github, Linkedin, Download, Send, Check, Phone, Loader2, AlertCircle } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setStatus("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -122,6 +144,8 @@ export default function Contact() {
                       type="text"
                       id="name"
                       required
+                      value={form.name}
+                      onChange={handleChange}
                       placeholder="Your name"
                       className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
                     />
@@ -137,6 +161,8 @@ export default function Contact() {
                       type="email"
                       id="email"
                       required
+                      value={form.email}
+                      onChange={handleChange}
                       placeholder="your@email.com"
                       className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
                     />
@@ -153,6 +179,8 @@ export default function Contact() {
                       type="text"
                       id="subject"
                       required
+                      value={form.subject}
+                      onChange={handleChange}
                       placeholder="What's this about?"
                       className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
                   />
@@ -168,6 +196,8 @@ export default function Contact() {
                       id="message"
                       required
                       rows={5}
+                      value={form.message}
+                      onChange={handleChange}
                       placeholder="Tell me about your project..."
                       className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all resize-none"
                   />
@@ -175,16 +205,29 @@ export default function Contact() {
                 <Button
                   type="submit"
                   variant="primary"
-                  className="w-full"
+                  className={cn(
+                    "w-full",
+                    status === "loading" && "opacity-70 pointer-events-none"
+                  )}
                   icon={
-                    submitted ? (
+                    status === "loading" ? (
+                      <Loader2 size={18} className="animate-spin" />
+                    ) : status === "success" ? (
                       <Check size={18} />
+                    ) : status === "error" ? (
+                      <AlertCircle size={18} />
                     ) : (
                       <Send size={18} />
                     )
                   }
                 >
-                  {submitted ? "Message Sent!" : "Send Message"}
+                  {status === "loading"
+                    ? "Sending..."
+                    : status === "success"
+                    ? "Message Sent!"
+                    : status === "error"
+                    ? "Failed to Send"
+                    : "Send Message"}
                 </Button>
               </form>
             </motion.div>
