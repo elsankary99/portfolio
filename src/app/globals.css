@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0a0f;
+    --foreground: #f8fafc;
+    --card: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --primary: #4f46e5;
+  }
+
+  .light {
+    --background: #f8fafc;
+    --foreground: #0a0a0f;
+    --card: rgba(0, 0, 0, 0.03);
+    --card-border: rgba(0, 0, 0, 0.06);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .light body,
+  .light .dark\:text-white {
+    color: #0a0a0f;
+  }
+
+  ::selection {
+    background: rgba(79, 70, 229, 0.3);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", system-ui, sans-serif;
+  }
+}
