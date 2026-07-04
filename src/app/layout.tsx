@@ -10,8 +10,16 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://ahmedelsankary.dev";
+
 export const metadata: Metadata = {
-  title: "Ahmed Ibrahim | Senior Flutter Developer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Ahmed Ibrahim | Senior Flutter Developer",
+    template: "%s | Ahmed Ibrahim - Senior Flutter Developer",
+  },
   description:
     "Senior Flutter Developer with 4+ years of experience building production mobile applications for Android and iOS. Specializing in Flutter, Dart, Clean Architecture, and scalable software.",
   keywords: [
@@ -25,25 +33,54 @@ export const metadata: Metadata = {
     "Android",
     "Cairo",
     "Egypt",
+    "Ahmed Ibrahim",
+    "Ahmed Elsankary",
+    "Flutter Cairo",
   ],
-  authors: [{ name: "Ahmed Ibrahim" }],
-  openGraph: {
-    title: "Ahmed Ibrahim | Senior Flutter Developer",
-    description:
-      "Building scalable Flutter apps for Android & iOS with clean architecture and exceptional user experiences.",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ahmed Ibrahim | Senior Flutter Developer",
-    description:
-      "Building scalable Flutter apps for Android & iOS with clean architecture and exceptional user experiences.",
-  },
+  authors: [{ name: "Ahmed Ibrahim", url: siteUrl }],
+  creator: "Ahmed Ibrahim",
+  publisher: "Ahmed Ibrahim",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Ahmed Ibrahim - Portfolio",
+    url: siteUrl,
+    title: "Ahmed Ibrahim | Senior Flutter Developer",
+    description:
+      "Building scalable Flutter apps for Android & iOS with clean architecture and exceptional user experiences.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ahmed Ibrahim - Senior Flutter Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@elsankary99",
+    creator: "@elsankary99",
+    title: "Ahmed Ibrahim | Senior Flutter Developer",
+    description:
+      "Building scalable Flutter apps for Android & iOS with clean architecture and exceptional user experiences.",
+    images: ["/opengraph-image.png"],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
