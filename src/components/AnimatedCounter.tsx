@@ -50,12 +50,12 @@ export default function AnimatedCounter({
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-3xl sm:text-4xl font-bold text-white">
+      <div className="text-3xl sm:text-4xl font-bold text-foreground">
         {prefix}
         {count}
         {suffix}
       </div>
-      <div className="text-sm text-white/50 mt-1">{label}</div>
+      <div className="text-sm text-foreground/50 mt-1">{label}</div>
     </div>
   );
 }

@@ -54,10 +54,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} dark`}
+      className={`${inter.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans bg-surface text-white antialiased">
+      <body className="font-sans bg-background text-foreground antialiased">
         <FloatingGradient />
         <Navigation />
         <main>{children}</main>

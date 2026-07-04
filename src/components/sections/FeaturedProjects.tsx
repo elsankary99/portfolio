@@ -41,7 +41,7 @@ export default function FeaturedProjects() {
               layout
             >
               <div
-                className="rounded-2xl bg-white/[0.03] border border-white/[0.06] overflow-hidden transition-all duration-500 hover:bg-white/[0.05]"
+                className="rounded-2xl bg-overlay/[0.03] border border-overlay/[0.06] overflow-hidden transition-all duration-500 hover:bg-overlay/[0.05]"
               >
                 {/* Preview */}
                 <div className="p-6 sm:p-8">
@@ -52,13 +52,13 @@ export default function FeaturedProjects() {
                         className={`relative w-full aspect-video rounded-xl overflow-hidden bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
                       >
                         <div className="text-center p-6">
-                          <span className="text-3xl font-bold text-white/90">
+                          <span className="text-3xl font-bold text-foreground/90">
                             {project.title}
                           </span>
-                          <p className="text-white/60 text-sm mt-2">
+                          <p className="text-foreground/60 text-sm mt-2">
                             Screenshot placeholder
                           </p>
-                          <p className="text-white/40 text-xs mt-1">
+                          <p className="text-foreground/40 text-xs mt-1">
                             Replace with {project.title} app screenshots
                           </p>
                         </div>
@@ -70,13 +70,13 @@ export default function FeaturedProjects() {
                       <span className="text-xs font-semibold tracking-widest uppercase text-primary-400 mb-2">
                         Featured Project
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-white/60 mt-1 mb-3">
+                      <p className="text-sm text-foreground/60 mt-1 mb-3">
                         {project.subtitle}
                       </p>
-                      <p className="text-sm text-white/50 leading-relaxed line-clamp-3">
+                      <p className="text-sm text-foreground/50 leading-relaxed line-clamp-3">
                         {project.overview}
                       </p>
 
@@ -99,7 +99,7 @@ export default function FeaturedProjects() {
                             href={project.appStore}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-white/50 hover:text-white transition-colors"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-foreground transition-colors"
                           >
                             <Apple size={14} />
                             App Store
@@ -110,7 +110,7 @@ export default function FeaturedProjects() {
                             href={project.googlePlay}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-white/50 hover:text-white transition-colors"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-foreground transition-colors"
                           >
                             <Play size={14} />
                             Google Play
@@ -121,7 +121,7 @@ export default function FeaturedProjects() {
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-white/50 hover:text-white transition-colors"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-foreground transition-colors"
                           >
                             <Github size={14} />
                             GitHub
@@ -157,28 +157,28 @@ export default function FeaturedProjects() {
                       transition={{ duration: 0.4, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 sm:px-8 pb-8 border-t border-white/[0.06] pt-6">
+                      <div className="px-6 sm:px-8 pb-8 border-t border-overlay/[0.06] pt-6">
                         <div className="grid sm:grid-cols-2 gap-6">
                           {/* Role */}
                           <div>
-                            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                            <h4 className="text-xs font-semibold tracking-widest uppercase text-foreground/40 mb-2">
                               My Role
                             </h4>
-                            <p className="text-sm text-white/70 leading-relaxed">
+                            <p className="text-sm text-foreground/70 leading-relaxed">
                               {project.role}
                             </p>
                           </div>
 
                           {/* Key Features */}
                           <div>
-                            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                            <h4 className="text-xs font-semibold tracking-widest uppercase text-foreground/40 mb-2">
                               Key Features
                             </h4>
                             <ul className="space-y-1">
                               {project.keyFeatures.map((feature, i) => (
                                 <li
                                   key={i}
-                                  className="text-sm text-white/60 flex gap-2"
+                                  className="text-sm text-foreground/60 flex gap-2"
                                 >
                                   <span className="text-primary-400 shrink-0">&rsaquo;</span>
                                   {feature}
@@ -189,14 +189,14 @@ export default function FeaturedProjects() {
 
                           {/* Challenges */}
                           <div>
-                            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                            <h4 className="text-xs font-semibold tracking-widest uppercase text-foreground/40 mb-2">
                               Challenges
                             </h4>
                             <ul className="space-y-1">
                               {project.challenges.map((challenge, i) => (
                                 <li
                                   key={i}
-                                  className="text-sm text-white/60 flex gap-2"
+                                  className="text-sm text-foreground/60 flex gap-2"
                                 >
                                   <span className="text-red-400 shrink-0">&rsaquo;</span>
                                   {challenge}
@@ -207,14 +207,14 @@ export default function FeaturedProjects() {
 
                           {/* Solutions */}
                           <div>
-                            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                            <h4 className="text-xs font-semibold tracking-widest uppercase text-foreground/40 mb-2">
                               Solutions
                             </h4>
                             <ul className="space-y-1">
                               {project.solutions.map((solution, i) => (
                                 <li
                                   key={i}
-                                  className="text-sm text-white/60 flex gap-2"
+                                  className="text-sm text-foreground/60 flex gap-2"
                                 >
                                   <span className="text-green-400 shrink-0">&rsaquo;</span>
                                   {solution}
@@ -225,7 +225,7 @@ export default function FeaturedProjects() {
 
                           {/* Technologies */}
                           <div>
-                            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                            <h4 className="text-xs font-semibold tracking-widest uppercase text-foreground/40 mb-2">
                               Technologies Used
                             </h4>
                             <div className="flex flex-wrap gap-2">
@@ -239,14 +239,14 @@ export default function FeaturedProjects() {
 
                           {/* Results */}
                           <div>
-                            <h4 className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                            <h4 className="text-xs font-semibold tracking-widest uppercase text-foreground/40 mb-2">
                               Results
                             </h4>
                             <ul className="space-y-1">
                               {project.results.map((result, i) => (
                                 <li
                                   key={i}
-                                  className="text-sm text-white/60 flex gap-2"
+                                  className="text-sm text-foreground/60 flex gap-2"
                                 >
                                   <span className="text-primary-400 shrink-0">&#9679;</span>
                                   {result}
@@ -257,13 +257,13 @@ export default function FeaturedProjects() {
                         </div>
 
                         {/* Links */}
-                        <div className="flex flex-wrap gap-4 mt-6 pt-4 border-t border-white/[0.06]">
+                        <div className="flex flex-wrap gap-4 mt-6 pt-4 border-t border-overlay/[0.06]">
                           {project.appStore && (
                             <a
                               href={project.appStore}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors"
+                              className="inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
                             >
                               <Apple size={16} />
                               View on App Store
@@ -275,7 +275,7 @@ export default function FeaturedProjects() {
                               href={project.googlePlay}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors"
+                              className="inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
                             >
                               <Play size={16} />
                               View on Google Play
@@ -287,7 +287,7 @@ export default function FeaturedProjects() {
                               href={project.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors"
+                              className="inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
                             >
                               <Github size={16} />
                               View Source

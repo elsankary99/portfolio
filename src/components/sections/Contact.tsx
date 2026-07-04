@@ -35,10 +35,10 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground">
                   Get in touch
                 </h3>
-                <p className="text-sm text-white/50 leading-relaxed">
+                <p className="text-sm text-foreground/50 leading-relaxed">
                   I&apos;m always open to discussing new projects, creative ideas,
                   or opportunities to push the boundaries of what&apos;s possible
                   with mobile technology.
@@ -48,18 +48,18 @@ export default function Contact() {
               <div className="space-y-4">
                 <a
                   href="mailto:elsankary99@gmail.com"
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-3 text-sm text-foreground/60 hover:text-primary-400 transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-xl bg-white/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
+                  <span className="w-10 h-10 rounded-xl bg-overlay/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
                     <Mail size={18} />
                   </span>
                   elsankary99@gmail.com
                 </a>
                 <a
                   href="tel:+201285805818"
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-3 text-sm text-foreground/60 hover:text-primary-400 transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-xl bg-white/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
+                  <span className="w-10 h-10 rounded-xl bg-overlay/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
                     <Phone size={18} />
                   </span>
                   +20 128 580 5818
@@ -68,9 +68,9 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/elsankary99/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-3 text-sm text-foreground/60 hover:text-primary-400 transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-xl bg-white/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
+                  <span className="w-10 h-10 rounded-xl bg-overlay/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
                     <Linkedin size={18} />
                   </span>
                   LinkedIn Profile
@@ -79,9 +79,9 @@ export default function Contact() {
                   href="https://github.com/elsankary99"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-3 text-sm text-foreground/60 hover:text-primary-400 transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-xl bg-white/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
+                  <span className="w-10 h-10 rounded-xl bg-overlay/[0.05] flex items-center justify-center group-hover:bg-primary-500/10 transition-colors">
                     <Github size={18} />
                   </span>
                   GitHub Profile
@@ -108,13 +108,13 @@ export default function Contact() {
             >
               <form
                 onSubmit={handleSubmit}
-                className="p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06] space-y-5"
+                className="p-8 rounded-2xl bg-overlay/[0.03] border border-overlay/[0.06] space-y-5"
               >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-white/60 mb-2"
+                      className="block text-sm font-medium text-foreground/60 mb-2"
                     >
                       Name
                     </label>
@@ -123,13 +123,13 @@ export default function Contact() {
                       id="name"
                       required
                       placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-white placeholder-white/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-white/60 mb-2"
+                      className="block text-sm font-medium text-foreground/60 mb-2"
                     >
                       Email
                     </label>
@@ -138,38 +138,38 @@ export default function Contact() {
                       id="email"
                       required
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-white placeholder-white/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
                     />
                   </div>
                 </div>
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-white/60 mb-2"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    required
-                    placeholder="What's this about?"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-white placeholder-white/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
+                      className="block text-sm font-medium text-foreground/60 mb-2"
+                    >
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      required
+                      placeholder="What's this about?"
+                      className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-white/60 mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    placeholder="Tell me about your project..."
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-white placeholder-white/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all resize-none"
+                      className="block text-sm font-medium text-foreground/60 mb-2"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      required
+                      rows={5}
+                      placeholder="Tell me about your project..."
+                      className="w-full px-4 py-3 rounded-xl bg-overlay/[0.05] border border-overlay/[0.1] text-foreground placeholder-foreground/20 text-sm focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-all resize-none"
                   />
                 </div>
                 <Button

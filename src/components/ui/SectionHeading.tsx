@@ -33,11 +33,11 @@ export default function SectionHeading({
       <span className="inline-block text-sm font-semibold tracking-widest uppercase text-primary-400 mb-4">
         {label}
       </span>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-foreground/60 leading-relaxed max-w-2xl mx-auto">
           {description}
         </p>
       )}

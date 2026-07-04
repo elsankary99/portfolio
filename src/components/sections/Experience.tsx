@@ -30,16 +30,16 @@ export default function Experience() {
               }`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 top-1 w-3 h-3 rounded-full bg-primary-500 border-2 border-surface z-10" />
+              <div className="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 top-1 w-3 h-3 rounded-full bg-primary-500 border-2 border-background z-10" />
 
               {/* Content */}
               <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}>
-                <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] transition-all duration-500">
+                <div className="p-6 rounded-2xl bg-overlay/[0.03] border border-overlay/[0.06] hover:bg-overlay/[0.06] transition-all duration-500">
                   <span className="inline-block text-xs font-semibold tracking-wider uppercase text-primary-400 mb-2">
                     {exp.period}
                   </span>
-                  <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                  <p className="text-sm text-white/60 mt-1">
+                  <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
+                  <p className="text-sm text-foreground/60 mt-1">
                     {exp.company} &middot; {exp.location}
                   </p>
 
@@ -51,7 +51,7 @@ export default function Experience() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                        className="text-sm text-white/60 leading-relaxed flex gap-2"
+                        className="text-sm text-foreground/60 leading-relaxed flex gap-2"
                       >
                         <span className="text-primary-400 shrink-0 mt-1.5">
                           &rsaquo;

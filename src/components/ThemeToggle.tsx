@@ -31,7 +31,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       className={cn(
         "relative p-2 rounded-xl transition-all duration-300",
-        "hover:bg-white/5 active:scale-95"
+        "hover:bg-overlay/5 active:scale-95"
       )}
       aria-label="Toggle theme"
     >
@@ -43,9 +43,9 @@ export default function ThemeToggle() {
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {isDark ? (
-          <Moon size={18} className="text-white/70" />
+          <Moon size={18} className="text-foreground/70" />
         ) : (
-          <Sun size={18} className="text-white/70" />
+          <Sun size={18} className="text-foreground/70" />
         )}
       </motion.div>
     </button>

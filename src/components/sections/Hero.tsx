@@ -48,7 +48,7 @@ export default function Hero() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight"
+              className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight"
             >
               Ahmed
               <br />
@@ -57,14 +57,14 @@ export default function Hero() {
 
             <motion.p
               variants={itemVariants}
-              className="mt-6 text-xl sm:text-2xl text-white/80 font-medium"
+              className="mt-6 text-xl sm:text-2xl text-foreground/80 font-medium"
             >
               Building scalable Flutter apps for Android & iOS.
             </motion.p>
 
             <motion.p
               variants={itemVariants}
-              className="mt-4 text-base text-white/50 leading-relaxed max-w-xl"
+              className="mt-4 text-base text-foreground/50 leading-relaxed max-w-xl"
             >
               I build production-ready mobile applications with Flutter, combining clean
               architecture, exceptional user experience, and scalable engineering practices.
@@ -112,13 +112,13 @@ export default function Hero() {
 
             <motion.div
               variants={itemVariants}
-              className="flex items-center gap-5 mt-10 pt-8 border-t border-white/5"
+              className="flex items-center gap-5 mt-10 pt-8 border-t border-overlay/5"
             >
               <a
                 href="https://www.linkedin.com/in/elsankary99/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 hover:text-primary-400 transition-colors duration-300"
+                className="text-foreground/40 hover:text-primary-400 transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={22} />
@@ -127,14 +127,14 @@ export default function Hero() {
                 href="https://github.com/elsankary99"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 hover:text-primary-400 transition-colors duration-300"
+                className="text-foreground/40 hover:text-primary-400 transition-colors duration-300"
                 aria-label="GitHub"
               >
                 <Github size={22} />
               </a>
               <a
                 href="mailto:elsankary99@gmail.com"
-                className="text-white/40 hover:text-primary-400 transition-colors duration-300"
+                className="text-foreground/40 hover:text-primary-400 transition-colors duration-300"
                 aria-label="Email"
               >
                 <Mail size={22} />
@@ -153,7 +153,7 @@ export default function Hero() {
               {/* Gradient ring */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary-500 via-purple-600 to-blue-600 p-[3px] shadow-2xl shadow-primary-600/20">
                 {/* Image container */}
-                <div className="relative w-full h-full rounded-full overflow-hidden bg-surface">
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-background">
                   <Image
                     src="/images/my_image/my_image.JPEG"
                     alt="Ahmed Ibrahim"
@@ -171,7 +171,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 hover:text-white/60 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground/30 hover:text-foreground/60 transition-colors"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.5 }}

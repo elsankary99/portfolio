@@ -48,15 +48,15 @@ export default function WhatIDo() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/10 transition-all duration-500"
+                className="group relative p-6 rounded-2xl bg-overlay/[0.03] border border-overlay/[0.06] hover:bg-overlay/[0.06] hover:border-overlay/10 transition-all duration-500"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary-500/10 flex items-center justify-center mb-4 group-hover:bg-primary-500/20 transition-colors duration-500">
                   <Icon size={20} className="text-primary-400" />
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2">
+                <h3 className="text-base font-semibold text-foreground mb-2">
                   {service.title}
                 </h3>
-                <p className="text-sm text-white/50 leading-relaxed">
+                <p className="text-sm text-foreground/50 leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>

@@ -53,7 +53,7 @@ export default function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-surface/80 backdrop-blur-xl border-b border-white/5"
+          ? "bg-background/80 backdrop-blur-xl border-b border-overlay/5"
           : "bg-transparent"
       )}
     >
@@ -61,7 +61,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <motion.a
             href="#"
-            className="text-xl font-bold text-white"
+            className="text-xl font-bold text-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -76,15 +76,15 @@ export default function Navigation() {
                 onClick={() => handleClick(item.href)}
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300",
-                  activeSection === item.href.slice(1)
-                    ? "text-white bg-white/10"
-                    : "text-white/50 hover:text-white hover:bg-white/5"
+                    activeSection === item.href.slice(1)
+                      ? "text-foreground bg-overlay/10"
+                      : "text-foreground/50 hover:text-foreground hover:bg-overlay/5"
                 )}
               >
                 {item.label}
               </button>
             ))}
-            <div className="ml-4 pl-4 border-l border-white/10">
+            <div className="ml-4 pl-4 border-l border-overlay/10">
               <ThemeToggle />
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white/70 hover:text-white"
+              className="p-2 text-foreground/70 hover:text-foreground"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -108,14 +108,14 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-white/5 bg-surface/95 backdrop-blur-xl"
+            className="md:hidden border-t border-overlay/5 bg-background/95 backdrop-blur-xl"
           >
             <div className="px-4 py-4 space-y-1">
               {navItems.map((item, i) => (
                 <motion.button
                   key={item.href}
                   onClick={() => handleClick(item.href)}
-                  className="block w-full text-left px-4 py-3 text-sm font-medium rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium rounded-lg text-foreground/60 hover:text-foreground hover:bg-overlay/5 transition-colors"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}

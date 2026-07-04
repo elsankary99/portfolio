@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        overlay: "rgb(var(--overlay) / <alpha-value>)",
         primary: {
           50: "#eef2ff",
           100: "#e0e7ff",
