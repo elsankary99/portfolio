@@ -10,6 +10,7 @@ export interface Project {
   technologies: string[];
   results: string[];
   appStore?: string;
+  appStoreProvider?: string;
   googlePlay?: string;
   github?: string;
   image: string;

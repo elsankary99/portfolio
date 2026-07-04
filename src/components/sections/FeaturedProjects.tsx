@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
@@ -9,6 +10,7 @@ import {
   Play,
   ChevronDown,
   ChevronUp,
+  Store,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Badge from "@/components/ui/Badge";
@@ -46,30 +48,61 @@ export default function FeaturedProjects() {
                 {/* Preview */}
                 <div className="p-6 sm:p-8">
                   <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">
-                    {/* Screenshot placeholder */}
+                    {/* Project Image */}
                     <div className="lg:col-span-2">
-                      <div
-                        className={`relative w-full aspect-video rounded-xl overflow-hidden bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-                      >
-                        <div className="text-center p-6">
-                          <span className="text-3xl font-bold text-foreground/90">
-                            {project.title}
-                          </span>
-                          <p className="text-foreground/60 text-sm mt-2">
-                            Screenshot placeholder
-                          </p>
-                          <p className="text-foreground/40 text-xs mt-1">
-                            Replace with {project.title} app screenshots
-                          </p>
+                      <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} blur-2xl scale-110 opacity-60`} />
+                        <div className="relative w-full h-full p-4">
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-contain"
+                              sizes="(max-width: 1024px) 100vw, 40vw"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     {/* Info */}
                     <div className="lg:col-span-3 flex flex-col justify-center">
-                      <span className="text-xs font-semibold tracking-widest uppercase text-primary-400 mb-2">
-                        Featured Project
-                      </span>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {project.appStore && (
+                          <a
+                            href={project.appStore}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay/10 text-foreground hover:bg-overlay/20 transition-colors"
+                          >
+                            <Apple size={14} />
+                            App Store
+                          </a>
+                        )}
+                        {project.appStoreProvider && (
+                          <a
+                            href={project.appStoreProvider}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay/10 text-foreground hover:bg-overlay/20 transition-colors"
+                          >
+                            <Store size={14} />
+                            Provider App
+                          </a>
+                        )}
+                        {project.googlePlay && (
+                          <a
+                            href={project.googlePlay}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay/10 text-foreground hover:bg-overlay/20 transition-colors"
+                          >
+                            <Play size={14} />
+                            Google Play
+                          </a>
+                        )}
+                      </div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
                         {project.title}
                       </h3>
@@ -93,30 +126,8 @@ export default function FeaturedProjects() {
                         )}
                       </div>
 
-                      <div className="flex items-center gap-3 mt-5">
-                        {project.appStore && (
-                          <a
-                            href={project.appStore}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-foreground transition-colors"
-                          >
-                            <Apple size={14} />
-                            App Store
-                          </a>
-                        )}
-                        {project.googlePlay && (
-                          <a
-                            href={project.googlePlay}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-foreground transition-colors"
-                          >
-                            <Play size={14} />
-                            Google Play
-                          </a>
-                        )}
-                        {project.github && (
+                      {project.github && (
+                        <div className="flex items-center gap-3 mt-5">
                           <a
                             href={project.github}
                             target="_blank"
@@ -126,8 +137,8 @@ export default function FeaturedProjects() {
                             <Github size={14} />
                             GitHub
                           </a>
-                        )}
-                      </div>
+                        </div>
+                      )}
 
                       <button
                         onClick={() => toggleExpand(project.id)}

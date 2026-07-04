@@ -66,7 +66,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            AI<span className="text-primary-400">.</span>
+            Ahmed<span className="text-primary-400"> Ibrahim</span>
           </motion.a>
 
           <div className="hidden md:flex items-center gap-1">

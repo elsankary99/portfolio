@@ -50,9 +50,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight"
             >
-              Ahmed
-              <br />
-              Ibrahim
+              Ahmed{" "}
+              <span className="text-primary-400">Ibrahim</span>
             </motion.h1>
 
             <motion.p
